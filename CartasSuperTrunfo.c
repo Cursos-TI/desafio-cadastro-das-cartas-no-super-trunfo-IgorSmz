@@ -73,10 +73,10 @@ int main(){
     
     // chamei a funcao para me auxiliar nas divisoes e deixar o codigo mais limpo
 
-    float densidade1 = (float) Divisao(popu1,area1); 
-    float densidade2 = (float) Divisao(popu2, area2);
-    float pibPerCap1 = (float) Divisao(pib1, popu1)*1000000000; // multipliquei por 1bi pra mostaro valor correto e converti pra float pq populacao e 'int'
-    float pibPerCap2 = (float) Divisao(pib2, popu2)*1000000000;
+    float densidade1 =   Divisao((float) popu1, area1); 
+    float densidade2 =   Divisao((float) popu2, area2);
+    float pibPerCap1 =   Divisao(pib1,  (float) popu1)*1000000000; // multipliquei por 1bi pra mostaro valor correto e converti pra float pq populacao e 'int'
+    float pibPerCap2 =   Divisao(pib2,  (float) popu2)*1000000000;
 
     
     printf("\n\n");
@@ -88,7 +88,7 @@ int main(){
     
     printf("\n\n"); //pular linha
      
-    // imprimir a carta 2
+    //imprimir a carta 2
     printf("CARTA 2\n\n");
     printf("Estado: %c \nCodigo: %s \nCidade: %s \nPopulacao: %d \n", estado2, codCarta2, nomeCidade2, popu2 );
     printf("Pontos turisticos: %d \nArea: %2.f km² \nPib: %2.f  Bilhoes de reais \nDensidade: %.3f\nPib Per cap %.3f\n", pontoTur2, area2, pib2,densidade2,pibPerCap2);
