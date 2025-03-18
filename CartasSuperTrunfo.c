@@ -2,6 +2,15 @@
 #include <stdlib.h>
 
 
+float Divisao (float num1, float num2){ //criei essa funcao pra fazer a densidade e o pib per capita
+    float resultado;
+
+    resultado = num1 / num2;
+
+    return resultado;
+}
+
+
 int main(){
 
     //declarando variavel
@@ -12,7 +21,7 @@ int main(){
     int popu1, popu2, pontoTur1, pontoTur2;
     float area1, area2, pib1, pib2;
 
-    printf("Desafio super trunfo \n\n");
+    printf("Desafio super trunfo Aventureiro\n\n");
     
    //pedindo as informacoes para o usuario
     printf("Digite a letra do estado da primeira carta\n");
@@ -33,7 +42,7 @@ int main(){
     printf("Digite o tamanho da area em km² da primeira carta\n");
     scanf("%f", &area1);
     
-    printf("Digite o pib do estado da primeira carta\n");
+    printf("Digite o pib em bilhoes da cidade da primeira carta\n");
     scanf("%f", &pib1);
     
     printf("\n\n");
@@ -59,21 +68,30 @@ int main(){
     printf("Digite o tamanho da area em km² da segunda carta\n");
     scanf("%f", &area2);
     
-    printf("Digite o pib do estado da segunda carta\n");
+    printf("Digite o pib da cidade da segunda carta\n");
     scanf("%f", &pib2);
+    
+    // chamei a funcao para me auxiliar nas divisoes e deixar o codigo mais limpo
 
+    float densidade1 = (float) Divisao(popu1,area1); 
+    float densidade2 = (float) Divisao(popu2, area2);
+    float pibPerCap1 = (float) Divisao(pib1, popu1)*1000000000; // multipliquei por 1bi pra mostaro valor correto e converti pra float pq populacao e 'int'
+    float pibPerCap2 = (float) Divisao(pib2, popu2)*1000000000;
+
+    
     printf("\n\n");
 
     // imprimir a carta 1
     printf("CARTA 1\n\n");
-    printf("Estado: %c \nCodigo: %s \nCidade: %s \nPopulacao: %d \nPontos turisticos: %d \nArea: %2.f \nPib: %2.f \n", estado1, codCarta1, nomeCidade1, popu1, pontoTur1, area1, pib1);
+    printf("Estado: %c \nCodigo: %s \nCidade: %s \nPopulacao: %d \n", estado1, codCarta1, nomeCidade1, popu1 );
+    printf("Pontos turisticos: %d \nArea: %2.f km² \nPib: %2.f Bilhoes de reais \nDensidade: %.3f\nPib Per cap %.3f\n", pontoTur1, area1, pib1,densidade1,pibPerCap1);
     
     printf("\n\n"); //pular linha
      
     // imprimir a carta 2
     printf("CARTA 2\n\n");
-    printf("Estado: %c \nCodigo: %s \nCidade: %s \nPopulacao: %d \nPontos turisticos: %d \nArea: %2.f \nPib: %2.f \n", estado2, codCarta2, nomeCidade2, popu2, pontoTur2, area2, pib2);
-    
+    printf("Estado: %c \nCodigo: %s \nCidade: %s \nPopulacao: %d \n", estado2, codCarta2, nomeCidade2, popu2 );
+    printf("Pontos turisticos: %d \nArea: %2.f km² \nPib: %2.f  Bilhoes de reais \nDensidade: %.3f\nPib Per cap %.3f\n", pontoTur2, area2, pib2,densidade2,pibPerCap2);
     
     system("pause"); //para o programa nao fechar automatico
 
