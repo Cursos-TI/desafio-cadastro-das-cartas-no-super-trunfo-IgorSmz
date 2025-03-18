@@ -78,6 +78,8 @@ int main(){
     float pibPerCap1 =   Divisao(pib1,  (float) popu1)*1000000000; // multipliquei por 1bi pra mostaro valor correto e converti pra float pq populacao e 'int'
     float pibPerCap2 =   Divisao(pib2,  (float) popu2)*1000000000;
 
+    float superPoder1 = (float) popu1 + (float) pontoTur1 + area1 + pib1 - densidade1 + pibPerCap1;
+    float superPoder2 = (float) popu2 + (float) pontoTur2 + area2 + pib2 - densidade2 + pibPerCap2;
     
     printf("\n\n");
 
@@ -92,6 +94,22 @@ int main(){
     printf("CARTA 2\n\n");
     printf("Estado: %c \nCodigo: %s \nCidade: %s \nPopulacao: %d \n", estado2, codCarta2, nomeCidade2, popu2 );
     printf("Pontos turisticos: %d \nArea: %2.f km² \nPib: %2.f  Bilhoes de reais \nDensidade: %.3f\nPib Per cap %.3f\n", pontoTur2, area2, pib2,densidade2,pibPerCap2);
+
+    
+    printf("\n\n");
+    printf("******comparacao das cartas*****\n\n");
+
+    
+   
+    printf("Populacao carta 1: %d e maior que a populacao carta 2: %d resultado: %d \n", popu1, popu2, (popu1 > popu2));
+    printf("Pontos Turisticos carta 1: %d e maior que os pontos turisticos da carta 2: %d resultado: %d \n", pontoTur1 , pontoTur2 , (pontoTur1>pontoTur2));
+    printf("Area da carta 1: %f e maior que a area da carta 2: %f resultado: %d \n",area1,area2,(area1>area2));
+    printf("Pib da carta 1: %f e maior que o Pib da carta 2: %f resultado: %d\n",pib1,pib2,(pib1>pib2));
+    printf("Densidade populacional da carta 1: %.2f e menor que da carta 2: %.2f resultado: %d\n",densidade1,densidade2,(densidade1<densidade2));
+    printf("Pib per capita da carta 1: %.2f e maior que da carta 2: %.2f resultado: %d\n",pibPerCap1,pibPerCap2,(pibPerCap1>pibPerCap2));
+    printf("Super poder da carta 1 %.2f e maior que da carta 2: %.2f resultado %d\n",superPoder1,superPoder2,(superPoder1>superPoder2));
+
+   
     
     system("pause"); //para o programa nao fechar automatico
 
